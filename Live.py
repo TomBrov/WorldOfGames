@@ -14,9 +14,9 @@ def load_game():
     g = input("Choose your game: ")
 
     if g.isdigit() and 0 < int(g) < 4:
-            g = int(g)
-            game = games[g]
-            print(f"The chosen game is {game}")
+        g = int(g)
+        game = games[g]
+        print(f"The chosen game is {game}")
     else:
         return "No game was chosen. Exiting!"
 
