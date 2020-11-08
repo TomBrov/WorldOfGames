@@ -11,7 +11,7 @@ def load_game():
           "2. Guess Game - guess a number and see if you chose like the computer.\n"
           "3. Currency Roulette - try and guess the value of a random amount of USD in ILS.")
 
-    g = input("Choose your game: ")
+    g = input("Choose your game's number: ")
 
     if g.isdigit() and 0 < int(g) < 4:
         g = int(g)
