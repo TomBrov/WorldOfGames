@@ -13,19 +13,19 @@ def load_game():
 
     g = input("Choose your game: ")
 
-    if g.isdigit():
+    if g.isdigit() and 0 < int(g) < 4:
             g = int(g)
             game = games[g]
             print(f"The chosen game is {game}")
-
-    diff = {"1": 1, "2": 2, "3": 3, "4": 4, "5": 5}
+    else:
+        return "No game was chosen. Exiting!"
 
     d = input("Please choose game difficulty from 1 to 5: ")
 
-    if d.isdigit():
-        chosen = diff[d]
-        return f"The chosen difficulty is {chosen}"
-
+    if d.isdigit() and 0 < int(d) < 6:
+        return f"The chosen difficulty is {d}"
+    else:
+        return "No difficulty was chosen. Exiting!"
 
 if __name__ == "__main__":
 
