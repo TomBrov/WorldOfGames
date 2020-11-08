@@ -27,6 +27,7 @@ def load_game():
     else:
         return "No difficulty was chosen. Exiting!"
 
+
 if __name__ == "__main__":
 
     name = input("Enter your name: ")
