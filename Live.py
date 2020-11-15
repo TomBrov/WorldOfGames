@@ -1,9 +1,16 @@
+from GuessGame import GuessGame
+
+
+GAMES = {2:GuessGame}
+
+
 def welcome(name):
-    return (f"Hello {name} and welcome to the World of Games (Wog).\n"
+    print (f"Hello {name} and welcome to the World of Games (Wog).\n"
             f"Here you can find many cool games to play")
+    return name
 
 
-def load_game():
+def load_game(name):
     games = {1: "Memory Game", 2: "Guess Game", 3: "Currency Roulette"}
 
     print("Please choose a game to play:\n"
@@ -20,16 +27,12 @@ def load_game():
     else:
         return "No game was chosen. Exiting!"
 
-    d = input("Please choose game difficulty from 1 to 5: ")
+    diff = input("Please choose game difficulty from 1 to 5: ")
 
-    if d.isdigit() and 0 < int(d) < 6:
-        return f"The chosen difficulty is {d}"
+    if diff.isdigit() and 0 < int(diff) < 6:
+        diff = int(diff)
     else:
         return "No difficulty was chosen. Exiting!"
 
-
-if __name__ == "__main__":
-
-    name = input("Enter your name: ")
-    print(welcome(name))
-    print(load_game())
+    currentgame = GAMES[g](diff, name)
+    currentgame.play()
