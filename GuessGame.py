@@ -20,7 +20,7 @@ class GuessGame(Game):
 
     def play(self):
         print("Welcome to Guess Game\n"
-              f"Well, {self.name},  I am thinking of a number between 1 and {self.diff}")
+              f"Well {self.name},  I am thinking of a number between 1 and {self.diff}")
 
         while self.guesses_taken < 6:
             if not self.get_guess():
