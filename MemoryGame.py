@@ -1,4 +1,6 @@
 import random, time
+import sys
+
 from Game import Game
 
 
@@ -19,12 +21,15 @@ class MemoryGame(Game):
         return True
 
     def play(self):
+
         print("Welcome to Memory Game\n"
               f"Well {self.name},  I am thinking of a sequence with {self.diff} digit/s")
 
         for i in range(0, self.diff):
             self.sequence.append(random.randint(1, 102))
-            print(self.sequence)
+        print(self.sequence, end='')
+        time.sleep(0.7)
+        sys.stdout.write('\b'*len(self.sequence.__str__()))
 
         while self.guesses_taken < 6:
             if not self.get_guess():
