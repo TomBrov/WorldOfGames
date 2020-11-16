@@ -36,4 +36,4 @@ class GuessGame(Game):
                 print(f'Good job, {self.name}! You guessed my number in {self.guesses_taken} guesses!')
                 return
 
-        print('Nope. The number I was thinking of was', self.secret_number)
+        print(f'Nope. The number I was thinking of was {self.secret_number}')
