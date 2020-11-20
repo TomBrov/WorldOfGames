@@ -9,7 +9,6 @@ class MemoryGame(Game):
         super().__init__(diff_game, name)
         self.sequence = []
 
-
     def play(self):
 
         print("Welcome to Memory Game\n"
