@@ -6,19 +6,9 @@ from Game import Game
 class RouletteGame(Game):
     def __init__(self, diff_game, name):
         super().__init__(diff_game, name)
-        self.guesses_taken = 0
         self.amount = random.randint(1, 101)
         self.currency = None
-        self.guess = None
         self.convert = None
-
-    def get_guess(self):
-        self.guess = input('Guess the amount of USD: ')
-        if not self.guess.isdigit():
-            print('Not a valid guess.')
-            return False
-        self.guess = int(self.guess)
-        return True
 
     def play(self):
 

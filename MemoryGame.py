@@ -9,16 +9,6 @@ class MemoryGame(Game):
         super().__init__(diff_game, name)
         self.sequence = []
         self.diff = self.diff
-        self.guesses_taken = 0
-        self.guess = None
-
-    def get_guess(self):
-        self.guess = input('Guess the Sequence: ')
-        if not self.guess.isdigit():
-            print('Not a valid guess.')
-            return False
-        self.guess = int(self.guess)
-        return True
 
     def play(self):
 

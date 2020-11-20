@@ -6,17 +6,7 @@ class GuessGame(Game):
     def __init__(self, diff_game, name):
         super().__init__(diff_game, name)
         self.diff = self.diff + 1
-        self.guesses_taken = 0
         self.secret_number = random.randint(1, self.diff)
-        self.guess = None
-
-    def get_guess(self):
-        self.guess = input('Take a guess.')
-        if not self.guess.isdigit():
-            print('Not a valid guess.')
-            return False
-        self.guess = int(self.guess)
-        return True
 
     def play(self):
         print("Welcome to Guess Game\n"
