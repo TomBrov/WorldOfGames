@@ -1,8 +1,7 @@
 import requests
 import random
+from config import *
 from Game import Game
-from config import key
-
 
 class RouletteGame(Game):
     def __init__(self, diff_game, name):
