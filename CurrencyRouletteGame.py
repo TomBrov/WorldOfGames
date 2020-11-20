@@ -3,6 +3,7 @@ import random
 from config import *
 from Game import Game
 
+
 class RouletteGame(Game):
     def __init__(self, diff_game, name):
         super().__init__(diff_game, name)
@@ -12,7 +13,7 @@ class RouletteGame(Game):
 
     def play(self):
 
-        params = {'access_key': key, 'currencies': 'USD,ILS', 'format': 1}
+        params = {'access_key': api_key, 'currencies': 'USD,ILS', 'format': 1}
         req = requests.get('http://apilayer.net/api/live', params=params)
         currency = req.json()['quotes']['USDILS']
 
