@@ -8,7 +8,7 @@ class MemoryGame(Game):
     def __init__(self, diff_game, name):
         super().__init__(diff_game, name)
         self.sequence = []
-        self.diff = self.diff
+
 
     def play(self):
 
