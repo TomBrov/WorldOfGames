@@ -1,0 +1,13 @@
+name: API Converter Key
+
+on:
+  pull_request:
+    branches:
+      - 'master'
+jobs:
+    Pull Key:
+      name: Pulling Key
+      runs-on: ubuntu-20.04
+        steps:
+          Key: {{secrets.CODECOV_TOKEN}}
+          file: ./env
