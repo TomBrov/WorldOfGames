@@ -8,6 +8,9 @@ jobs:
   Pull Key:
     name: Pulling Key
     runs-on: ubuntu-20.04
-    env:
-      Key: ${{secrets.CONVERTER_KEY}}
-      file: ./env
+    steps:
+    - shell: bash
+      env:
+        Key: ${{ secrets.CONVERTER_KEY}}
+      run: |
+        echo $Key >> ./config
