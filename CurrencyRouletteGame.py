@@ -1,6 +1,5 @@
 import requests
 import random
-from config import *
 from Game import Game
 
 
@@ -13,15 +12,16 @@ class RouletteGame(Game):
 
     def play(self):
 
-        params = {'access_key': api_key, 'currencies': 'USD,ILS', 'format': 1}
-        req = requests.get('http://apilayer.net/api/live', params=params)
-        currency = req.json()['quotes']['USDILS']
+        params = {'base': 'USD', 'symbols': 'ILS', 'format': 1}
+        req = requests.get('http://api.exchangeratesapi.io/latest', params=params)
+        currency = req.json()['rates']['ILS']
 
         currency = int(currency) * self.amount
         self.currency = (currency - (5 - self.diff), currency + (5 - self.diff))
 
         print("Welcome to Currency Roulette\n"
-              f"Well {self.name},  The amount in ILS is between {self.currency}")
+              f"Well {self.name},  The amount in ILS is between {self.currency}\n"
+              f"How many USD is that?")
 
         while self.guesses_taken < 6:
             if not self.get_guess():
