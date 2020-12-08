@@ -3,11 +3,11 @@ name: API Converter Key
 on:
   pull_request:
     branches:
-      - 'Actions-test'
+      - 'master'
 jobs:
-    Pull Key:
-      name: Pulling Key
-      runs-on: ubuntu-20.04
-        steps:
-          Key: {{secrets.CODECOV_TOKEN}}
-          file: ./env
+  Pull Key:
+    name: Pulling Key
+    runs-on: ubuntu-20.04
+    env:
+      Key: ${{secrets.CONVERTER_KEY}}
+      file: ./env
