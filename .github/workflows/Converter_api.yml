@@ -3,7 +3,7 @@ name: API Converter Key
 on:
   pull_request:
     branches:
-      - 'master'
+      - 'Actions-test'
 jobs:
     Pull Key:
       name: Pulling Key
