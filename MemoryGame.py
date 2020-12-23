@@ -1,5 +1,6 @@
 import random, time
-import sys
+from Utils import *
+
 
 from Game import Game
 
@@ -18,7 +19,7 @@ class MemoryGame(Game):
             self.sequence.append(random.randint(1, 102))
         print(self.sequence, end='')
         time.sleep(0.7)
-        sys.stdout.write('\b'*len(self.sequence.__str__()))
+        Screen_cleaner()
 
         while self.guesses_taken < 6:
             if not self.get_guess():
@@ -36,3 +37,4 @@ class MemoryGame(Game):
                 return
 
         print(f'Nope. The sequence I was thinking of was {self.sequence}')
+        return
