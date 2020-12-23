@@ -13,7 +13,7 @@ class MemoryGame(Game):
     def play(self):
 
         print("Welcome to Memory Game\n"
-              f"Well {self.name},  I am thinking of a sequence with {self.diff} digit/s")
+              f"Well {self.name},  I am thinking of a sequence with {self.diff} number/s")
 
         for i in range(0, self.diff):
             self.sequence.append(random.randint(1, 102))
