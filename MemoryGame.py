@@ -34,7 +34,6 @@ class MemoryGame(Game):
                 print('Your guess is too high.')
             else:
                 print(f'Good job, {self.name}! You guessed my sequence!')
-                return
+                add_score()
 
         print(f'Nope. The sequence I was thinking of was {self.sequence}')
-        return

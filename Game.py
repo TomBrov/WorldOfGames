@@ -16,7 +16,7 @@ class Game:
     def add_score(self):
 
         value = (self.diff * 3) + 5
-        p = f'./score.txt
+        p = './score.txt'
 
         if path.exists(p):
             p = open("score.txt", 'r')

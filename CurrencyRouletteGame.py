@@ -34,6 +34,6 @@ class RouletteGame(Game):
                 print('Your guess is too high.')
             else:
                 print(f'Good job, {self.name}! You guessed my number in {self.guesses_taken} guesses!')
-                return
+                add_score()
 
         print(f'Nope. The amount I was thinking of was {self.amount}')
