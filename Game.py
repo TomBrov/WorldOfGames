@@ -4,6 +4,7 @@ class Game:
         self.name = name
         self.guesses_taken = 0
         self.guess = None
+        self.value = (self.diff * 3) + 5
 
     def get_guess(self):
         self.guess = input('Take a guess: ')
@@ -15,7 +16,6 @@ class Game:
 
     def add_score(self):
 
-        value = (self.diff * 3) + 5
         p = './score.txt'
 
         if path.exists(p):
@@ -23,7 +23,7 @@ class Game:
             f = p.read()
             if f.isdigit():
                 f = int(f)
-                sum = f + value
+                sum = f + self.value
                 p = open("score.txt", "w")
                 p.write(f'{sum}')
                 p.close()
@@ -31,5 +31,5 @@ class Game:
                 pass
         else:
             p = open("score.txt", 'w')
-            p.write(f'{value}')
+            p.write(f'{self.value}')
             p.close()

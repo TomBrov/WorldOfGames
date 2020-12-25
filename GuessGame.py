@@ -1,5 +1,6 @@
 import random
 from Game import Game
+from Utils import *
 
 
 class GuessGame(Game):
@@ -23,7 +24,8 @@ class GuessGame(Game):
             elif self.guess > self.secret_number:
                 print('Your guess is too high.')
             else:
-                print(f'Good job, {self.name}! You guessed my number in {self.guesses_taken} guesses!')
+                print(f'Good job, {self.name}! You guessed my number in {self.guesses_taken} guesses!\n'
+                      f'You made {self.value} points')
                 self.add_score()
 
         print(f'Nope. The number I was thinking of was {self.secret_number}')

@@ -1,8 +1,7 @@
 import requests
 import random
 from Game import Game
-from Game import add_score
-
+from Utils import *
 
 class RouletteGame(Game):
     def __init__(self, diff_game, name):
@@ -34,7 +33,8 @@ class RouletteGame(Game):
             elif self.guess > self.amount:
                 print('Your guess is too high.')
             else:
-                print(f'Good job, {self.name}! You guessed my number in {self.guesses_taken} guesses!')
+                print(f'Good job, {self.name}! You guessed my number in {self.guesses_taken} guesses!\n'
+                      f'You made {self.value} points')
                 self.add_score()
 
         print(f'Nope. The amount I was thinking of was {self.amount}')

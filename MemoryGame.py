@@ -1,6 +1,7 @@
-import random, time
-from Utils import *
+import random
+import time
 from Game import Game
+from Utils import *
 
 
 class MemoryGame(Game):
@@ -31,7 +32,9 @@ class MemoryGame(Game):
             elif self.guess > self.sequence[i]:
                 print('Your guess is too high.')
             else:
-                print(f'Good job, {self.name}! You guessed my sequence!')
+                print(f'Good job, {self.name}! You guessed my sequence!\n'
+                      f'You made {self.value} points')
+
                 self.add_score()
 
         print(f'Nope. The sequence I was thinking of was {self.sequence}')
