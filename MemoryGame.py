@@ -1,7 +1,5 @@
 import random, time
 from Utils import *
-
-
 from Game import Game
 
 
@@ -34,6 +32,6 @@ class MemoryGame(Game):
                 print('Your guess is too high.')
             else:
                 print(f'Good job, {self.name}! You guessed my sequence!')
-                add_score()
+                self.add_score()
 
         print(f'Nope. The sequence I was thinking of was {self.sequence}')

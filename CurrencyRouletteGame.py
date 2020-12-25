@@ -1,6 +1,7 @@
 import requests
 import random
 from Game import Game
+from Game import add_score
 
 
 class RouletteGame(Game):
@@ -34,6 +35,6 @@ class RouletteGame(Game):
                 print('Your guess is too high.')
             else:
                 print(f'Good job, {self.name}! You guessed my number in {self.guesses_taken} guesses!')
-                add_score()
+                self.add_score()
 
         print(f'Nope. The amount I was thinking of was {self.amount}')

@@ -24,6 +24,6 @@ class GuessGame(Game):
                 print('Your guess is too high.')
             else:
                 print(f'Good job, {self.name}! You guessed my number in {self.guesses_taken} guesses!')
-                add_score()
+                self.add_score()
 
         print(f'Nope. The number I was thinking of was {self.secret_number}')

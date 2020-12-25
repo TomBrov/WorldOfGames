@@ -1,7 +1,7 @@
 import os
 
 SCORES_FILE_NAME = 'score.txt'
-BAD_RETURN_CODE = 1
+BAD_RETURN_CODE = 'Something went wrong...'
 
 
 def Screen_cleaner():
