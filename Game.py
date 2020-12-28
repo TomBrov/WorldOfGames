@@ -29,7 +29,7 @@ class Game:
                     with open(f"{SCORES_FILE_NAME}", "w") as p:
                         p.write(f'{sum}')
                 else:
-
+                    pass
         else:
             with open(f"{SCORES_FILE_NAME}", 'w') as p:
                 p.write(f'{str(self.value)}')
