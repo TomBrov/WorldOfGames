@@ -3,6 +3,7 @@ import random
 from Game import Game
 from Utils import *
 
+
 class RouletteGame(Game):
     def __init__(self, diff_game, name):
         super().__init__(diff_game, name)
@@ -11,7 +12,6 @@ class RouletteGame(Game):
         self.convert = None
 
     def play(self):
-
         params = {'base': 'USD', 'symbols': 'ILS', 'format': 1}
         req = requests.get('http://api.exchangeratesapi.io/latest', params=params)
         currency = req.json()['rates']['ILS']

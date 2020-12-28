@@ -1,3 +1,7 @@
+from os import path
+from Utils import *
+
+
 class Game:
     def __init__(self, diff_game, name):
         self.diff = diff_game
@@ -15,21 +19,17 @@ class Game:
         return True
 
     def add_score(self):
-
-        p = './score.txt'
-
+        p = f'./{SCORES_FILE_NAME}'
         if path.exists(p):
-            p = open("score.txt", 'r')
-            f = p.read()
-            if f.isdigit():
-                f = int(f)
-                sum = f + self.value
-                p = open("score.txt", "w")
-                p.write(f'{sum}')
-                p.close()
-            else:
-                pass
+            with open(f"{SCORES_FILE_NAME}", 'r') as p:
+                f = p.read()
+                if f.isdigit():
+                    f = int(f)
+                    sum = str(f + self.value)
+                    with open(f"{SCORES_FILE_NAME}", "w") as p:
+                        p.write(f'{sum}')
+                else:
+
         else:
-            p = open("score.txt", 'w')
-            p.write(f'{self.value}')
-            p.close()
+            with open(f"{SCORES_FILE_NAME}", 'w') as p:
+                p.write(f'{str(self.value)}')
