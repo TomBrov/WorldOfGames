@@ -12,8 +12,13 @@ def Screen_cleaner():
     else:
         _ = os.system('cls')
 
+
 def get_score_from_file(file_path):
     try:
         f = open(SCORES_FILE_NAME, 'r')
         score = f.readline()
         return score
+    except:
+        print("File Cannot Be Found")
+    finally:
+        f.close()

@@ -1,5 +1,5 @@
 from os import path
-from Utils import *
+from Utils import SCORES_FILE_NAME
 
 
 class Game:
@@ -29,7 +29,7 @@ class Game:
                     with open(f"{SCORES_FILE_NAME}", "w") as p:
                         p.write(f'{sum}')
                 else:
-                    pass
+                    return BAD_RETURN_CODE
         else:
             with open(f"{SCORES_FILE_NAME}", 'w') as p:
                 p.write(f'{str(self.value)}')

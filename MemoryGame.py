@@ -1,8 +1,7 @@
 import random
 import time
 from Game import Game
-from Utils import *
-
+from Utils import Screen_cleaner
 
 class MemoryGame(Game):
     def __init__(self, diff_game, name):
@@ -34,7 +33,7 @@ class MemoryGame(Game):
             else:
                 print(f'Good job, {self.name}! You guessed my sequence!\n'
                       f'You made {self.value} points')
-
                 self.add_score()
+                exit(0)
 
         print(f'Nope. The sequence I was thinking of was {self.sequence}')

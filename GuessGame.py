@@ -1,6 +1,5 @@
 import random
 from Game import Game
-from Utils import *
 
 
 class GuessGame(Game):
@@ -27,5 +26,6 @@ class GuessGame(Game):
                 print(f'Good job, {self.name}! You guessed my number in {self.guesses_taken} guesses!\n'
                       f'You made {self.value} points')
                 self.add_score()
+                exit(0)
 
         print(f'Nope. The number I was thinking of was {self.secret_number}')
