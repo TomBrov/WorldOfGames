@@ -3,6 +3,7 @@ import time
 from Game import Game
 from Utils import Screen_cleaner
 
+
 class MemoryGame(Game):
     def __init__(self, diff_game, name):
         super().__init__(diff_game, name)
@@ -35,5 +36,4 @@ class MemoryGame(Game):
                       f'You made {self.value} points')
                 self.add_score()
                 exit(0)
-
         print(f'Nope. The sequence I was thinking of was {self.sequence}')

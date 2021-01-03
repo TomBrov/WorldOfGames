@@ -1,7 +1,3 @@
 .idea
 venv
 __pychace__
-dist
-build
-world_of_games_TomBrov.egg-info
-tests

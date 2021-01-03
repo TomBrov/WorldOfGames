@@ -1,9 +1,9 @@
 import os
 
 SCORES_FILE_NAME = 'score.txt'
-BAD_RETURN_CODE = 'Something went wrong...'
-FILE_NOT_FOUND = "File not found!"
-FILE_EMPTY_ERROR = "Nothing in here to see!"
+BAD_RETURN_CODE = 'SOMETHING IS WRONG HERE...'
+FILE_NOT_FOUND = "FILE NOT FOUND!"
+FILE_EMPTY_ERROR = "I PITY THE FOOL THAT HAS AN EMPTY FILE!"
 
 
 def Screen_cleaner():
