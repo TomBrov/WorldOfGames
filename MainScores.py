@@ -1,7 +1,6 @@
 from flask import Flask
 from Utils import *
-from os import path
-
+from redis import Redis
 
 app = Flask(__name__)
 
@@ -16,15 +15,15 @@ def html_error(error):
 
 @app.route('/', methods=['GET'])
 def score_server():
-    if path.exists(SCORES_FILE_NAME):
-        current_score = get_score_from_file(SCORES_FILE_NAME)
-        if current_score != '':
-            return html_valid(current_score)
-        else:
-            return html_error(FILE_EMPTY_ERROR)
+    redis = Redis(host='redis',password='wog123', decode_responses=True)
+    score = redis.get('user')
+    score = int(score)
+
+    if score is None:
+        return html_error(NOTHING_ERROR)
     else:
-        return html_error(FILE_NOT_FOUND)
+        return html_valid(score)
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=8777)

@@ -34,6 +34,6 @@ class MemoryGame(Game):
             else:
                 print(f'Good job, {self.name}! You guessed my sequence!\n'
                       f'You made {self.value} points')
-                self.add_score()
+                self.add_score_db()
                 exit(0)
         print(f'Nope. The sequence I was thinking of was {self.sequence}')

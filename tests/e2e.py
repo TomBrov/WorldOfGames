@@ -10,7 +10,7 @@ def test_score_service():
     chrome_driver = os.path.join("./chromedriver")
     driver = webdriver.Chrome(chrome_options=options, executable_path='./chromedriver')
 
-    driver.get("http://127.0.0.1:5000")
+    driver.get("https://0.0.0.0:8777")
     score = int(driver.find_element_by_id("score").get_attribute("innerText"))
     if 1 < score < 1000:
         x = True

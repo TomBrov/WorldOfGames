@@ -1,8 +1,20 @@
 version: '3'
 services:
-    web:
+    flask-web:
         build: .
         ports:
             - '8777:8777'
+        links:
+            - 'redis-db:redis'
+
+    redis-db:
+        image: redis:rc-alpine
+        restart: always
+        command: redis-server --requirepass wog123
+        ports:
+            - '6379:6379'
+        volumes:
+            - My-Games:/var/lib/redis
+
 volumes:
-    my-Games:
+    My-Games:

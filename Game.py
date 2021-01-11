@@ -1,5 +1,4 @@
-from os import path
-from Utils import SCORES_FILE_NAME
+from redis import Redis
 
 
 class Game:
@@ -18,18 +17,15 @@ class Game:
         self.guess = int(self.guess)
         return True
 
-    def add_score(self):
-        p = f'./{SCORES_FILE_NAME}'
-        if path.exists(p):
-            with open(f"{SCORES_FILE_NAME}", 'r') as p:
-                f = p.read()
-                if f.isdigit():
-                    f = int(f)
-                    sum = str(f + self.value)
-                    with open(f"{SCORES_FILE_NAME}", "w") as p:
-                        p.write(f'{sum}')
-                else:
-                    return BAD_RETURN_CODE
-        else:
-            with open(f"{SCORES_FILE_NAME}", 'w') as p:
-                p.write(f'{str(self.value)}')
+    def add_score_db(self):
+        name = 'user'
+        score = self.value
+
+        redis = Redis(password='wog123', decode_responses=True)
+
+        current_value = redis.get(name)
+
+        if current_value is not None:
+            score += int(current_value)
+        redis.set(name, score)
+        redis.close()
