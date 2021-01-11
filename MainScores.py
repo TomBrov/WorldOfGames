@@ -17,11 +17,12 @@ def html_error(error):
 def score_server():
     redis = Redis(host='redis',password='wog123', decode_responses=True)
     score = redis.get('user')
-    score = int(score)
+    score = str(score)
 
-    if score is None:
+    if score.isalpha():
         return html_error(NOTHING_ERROR)
     else:
+        score = int(score)
         return html_valid(score)
 
 

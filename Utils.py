@@ -1,8 +1,7 @@
 import os
 
 BAD_RETURN_CODE = 'SOMETHING IS WRONG HERE...'
-EMPTY_ERROR = "I PITY THE FOOL THAT HAS NO SCORE!"
-NOTHING_ERROR = "You Tried And Still Failed"
+NOTHING_ERROR = "Nothing here!"
 
 
 def Screen_cleaner():
