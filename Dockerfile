@@ -1,7 +1,6 @@
 FROM python:3-alpine
 WORKDIR app
 ADD MainScores.py /app
-ADD Scores.txt /app
 ADD Utils.py /app
 ADD requirements.txt /app
 RUN pip install -r requirements.txt

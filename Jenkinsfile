@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 sh '''echo "Pulling Repository"'''
-                git branch: 'main', credentialsId: 'dbcab98a-98f1-44d9-a438-bc6ed51e8ce5', url: 'https://github.com/TomBrov/WorldOfGames'
+                git branch: 'dev', credentialsId: 'dbcab98a-98f1-44d9-a438-bc6ed51e8ce5', url: 'https://github.com/TomBrov/WorldOfGames'
                 sh '''echo "Repository Pulled"
                       chmod 777 *'''
             }
