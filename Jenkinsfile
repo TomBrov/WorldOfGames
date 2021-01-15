@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh '''sudo docker-compose up --build -d'''
+                sh '''echo tom1! | sudo -S docker-compose up --build -d'''
             }
         }
         stage('Test') {
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Finalize') {
             steps {
-                sh ''' sudo docker-compose down '''
+                sh ''' echo tom1! | sudo -S docker-compose down '''
             }
         }
     }
