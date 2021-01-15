@@ -18,6 +18,7 @@ pipeline {
             steps {
                 sh '''cd tests
                       chmod +x *
+                      redis-cli SET 'user' '8'
                       python ./e2e.py'''
             }
         }
