@@ -6,6 +6,8 @@ services:
             - '8777:8777'
         links:
             - 'redis-db:redis'
+        depends_on:
+            - redis-db
 
     redis-db:
         image: redis:rc-alpine
