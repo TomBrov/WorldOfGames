@@ -11,7 +11,8 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh '''docker-compose up --build -d'''
+                sh '''pip install -r requirements.txt
+                      docker-compose up --build -d'''
             }
         }
         stage('Test') {
