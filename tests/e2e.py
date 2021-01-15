@@ -11,9 +11,9 @@ def test_score_service():
     chrome_driver = os.path.join("./chromedriver")
     driver = webdriver.Chrome(chrome_options=options, executable_path='./chromedriver')
 
-    r = Redis()
-    r.set('user', 8)
-    r.close()
+    redis = Redis(password='wog123', decode_responses=True)
+    redis.set('user', 8)
+    redis.close()
 
     driver.get("http://0.0.0.0:8777")
     score = int(driver.find_element_by_id("score").get_attribute("innerText"))
