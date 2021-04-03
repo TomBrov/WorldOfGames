@@ -8,6 +8,10 @@ services:
             - 'redis-db:redis'
         depends_on:
             - redis-db
+        logging:
+            driver: "fluentd"
+            options:
+                fluentd-address: localhost:24224
 
     redis-db:
         image: redis:rc-alpine
