@@ -6,17 +6,11 @@ app = Flask(__name__)
 
 
 def html_valid(scores):
-    return f'<html>' \
-           f'<head> <title>Scores Game</title> </head>' \
-           f'<body> <h1>The score is <div id="score">{scores} </div> </h1></body>' \
-           f'</html>'
+    return f'<html> <head> <title>Scores Game</title> </head> <body> <h1>The score is <div id="score">{scores}</div></h1></body> </html>'
 
 
 def html_error(error):
-    return f'<html>' \
-           f'<head> <title>Scores Game</title> </head>' \
-           f'<body> <h1><div id="score" style="color:red">{error}</div></h1> </body>' \
-           f'</html>'
+    return f'<html> <head> <title>Scores Game</title> </head> <body> <body> <h1><div id="score" style="color:red">{error}</div></h1> </body> </html>'
 
 
 @app.route('/', methods=['GET'])

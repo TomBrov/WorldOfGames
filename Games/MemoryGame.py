@@ -1,6 +1,6 @@
 import random
 import time
-from Games.Game import Game
+from Game import Game
 from Dockerimage.Utils import Screen_cleaner
 
 
