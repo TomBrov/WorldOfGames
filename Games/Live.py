@@ -1,6 +1,6 @@
-from Games.MemoryGame import MemoryGame
-from Games.GuessGame import GuessGame
-from Games.CurrencyRouletteGame import RouletteGame
+from MemoryGame import MemoryGame
+from GuessGame import GuessGame
+from CurrencyRouletteGame import RouletteGame
 
 GAMES = {1:MemoryGame, 2:GuessGame, 3:RouletteGame}
 

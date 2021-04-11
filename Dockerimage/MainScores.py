@@ -1,12 +1,12 @@
 from flask import Flask
-from Dockerimage.Utils import *
+from Utils import *
 from redis import Redis
 
 app = Flask(__name__)
 
 
 def html_valid(scores):
-    return f'<html> <head> <title>Scores Game</title> </head> <body> <h1>The score is <div id="score">{scores}</div></h1></body> </html>'
+    return f'<html><head> <title>Scores Game</title> </head> <body> <h1>The score is <div id="score">{scores}</div></h1></body> </html> '
 
 
 def html_error(error):
