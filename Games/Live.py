@@ -7,7 +7,7 @@ GAMES = {1:MemoryGame, 2:GuessGame, 3:RouletteGame}
 
 def welcome(name):
     print (f"Hello {name} and welcome to the World of Games (Wog).\n"
-            f"Here you can find many cool games to play")
+            f"Here you can find many cool games to play in your CLI")
     return name
 
 
@@ -35,5 +35,6 @@ def load_game(name):
     else:
         return "No difficulty was chosen. Exiting!"
 
+    print(f"Opening {game} with difficulty {diff}")
     currentgame = GAMES[g](diff, name)
     currentgame.play()
