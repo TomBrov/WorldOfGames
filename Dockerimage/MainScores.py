@@ -1,5 +1,5 @@
 from flask import Flask
-from Utils import *
+from Dockerimage.Utils import *
 from redis import Redis
 
 app = Flask(__name__)

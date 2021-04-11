@@ -1,7 +1,7 @@
 import random
 import time
-from Game import Game
-from Utils import Screen_cleaner
+from Games.Game import Game
+from Dockerimage.Utils import Screen_cleaner
 
 
 class MemoryGame(Game):
