@@ -1,4 +1,4 @@
-from Live import welcome, load_game
+from Games.Live import welcome, load_game
 
 name = input('Hello Dear User,\n'
              'Please input your name: ')
