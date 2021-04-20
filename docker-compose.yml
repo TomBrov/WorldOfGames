@@ -10,7 +10,8 @@ services:
     redis:
         image: redis:rc-alpine
         restart: always
-        command: redis-server --requirepass wog123
+        command: redis-server --requirepass REDIS_PASSWORD
+        enviroment: ./deployment.env
         ports:
             - '6379:6379'
         volumes:
