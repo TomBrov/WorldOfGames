@@ -3,17 +3,16 @@ services:
     flask-web:
         build: .
         ports:
-            - '8777:8777'
+            - '${FLASK_PORT}'
         depends_on:
             - redis
 
     redis:
         image: redis:rc-alpine
         restart: always
-        command: redis-server --requirepass REDIS_PASSWORD
-        enviroment: ./deployment.env
+        command: redis-server --requirepass '${REDIS_PASSWORD}'
         ports:
-            - '6379:6379'
+            - '${REDIS_PORT}'
         volumes:
             - My-Games:/var/lib/redis
 
