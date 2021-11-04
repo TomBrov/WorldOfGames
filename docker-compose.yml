@@ -15,6 +15,8 @@ services:
             - '${REDIS_PORT}'
         volumes:
             - My-Games:/var/lib/redis
+            - scores:/var/lib/scores
 
 volumes:
-    My-Games:
+    My-Games:/var/lib/redis
+    scores:/var/lib/scores
